@@ -1,15 +1,43 @@
-<header *ngIf="getUser()">
-  <h1>{{title}}</h1>
-  <section class="user">
-    <label>Identifié via {{getUserProvider()}}</label>
-    <section class="connection">
-      <label *ngIf="getConnected() | async">✅ connecté</label>
-      <label *ngIf="!(getConnected() | async)" (click)="tryReconnectSocket()">✗ déconnecté</label>
-    </section>
-    <label>{{getUserName()}}</label>
-    <label>{{getUserMail()}}</label>
-  </section>
-  <img class="photo" [src]="getUserPhoto()" />
-</header>
+<nav *ngIf="getUser()" class="navbar is-dark">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <i class="fa fa-list fa-3x" aria-hidden="true"></i>
+    </a>
+  </div>
 
-<router-outlet></router-outlet>
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <h1 class="navbar-item title">{{title}}</h1>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <section class="user">
+          <label>Identifié via {{getUserProvider()}}</label>
+          <section class="connection">
+            <label *ngIf="getConnected() | async"><span class="has-text-success"><i class="fa fa-check-square"></i></span> connecté</label>
+            <label *ngIf="!(getConnected() | async)" (click)="tryReconnectSocket()"><span class="has-text-danger"><i class="fa fa-ban"></i></span> déconnecté</label>
+          </section>
+          <section>
+            <label><i class="fa fa-user-circle" aria-hidden="true"><br></i> {{getUserName()}}</label>
+          </section>
+          <section>
+            <label><i class="fa fa-envelope" aria-hidden="true"><br></i> {{getUserMail()}}</label>
+          </section>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <img class="photo" [src]="getUserPhoto()" />
+    </a>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+

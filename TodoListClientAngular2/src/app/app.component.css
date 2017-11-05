@@ -1,3 +1,4 @@
+/*
 header {
   display: flex;
   flex-flow: row;
@@ -16,6 +17,7 @@ header > section.user {
   display: flex;
   flex-flow: column;
 }
+*/
 
 header img.photo {
   width: 6em;
@@ -23,6 +25,7 @@ header img.photo {
   margin-left: 1em;
 }
 
+/*
 section.connection {
   padding: 0;
   margin: 0;
@@ -32,3 +35,5 @@ section.connection {
 section.connection > label:hover {
   background: yellow;
 }
+*/
+

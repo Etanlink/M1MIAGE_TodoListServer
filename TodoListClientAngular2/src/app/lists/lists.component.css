@@ -10,3 +10,7 @@ app-todo-list {
   border: solid black 1px;
   margin: 1em;
 }
+
+section.new_state {
+  margin: 15px;
+}

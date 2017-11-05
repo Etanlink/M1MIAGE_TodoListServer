@@ -5,3 +5,11 @@ section.toBeUpdated {
 form {
   display: inline;
 }
+
+table.item {
+  border: 1px solid darkslategrey;
+}
+
+td {
+  padding: 3px;
+}

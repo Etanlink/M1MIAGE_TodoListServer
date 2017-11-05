@@ -9,7 +9,7 @@
       </td>
     </tr>
   </table>
-
+  <br/>
   <section class="items">
     <app-todo-item id="item"
                    *ngFor="let item of list.items"
@@ -18,13 +18,12 @@
                    [listId]="list.id"
                    [lists]="lists">
     </app-todo-item>
-
     <form (ngSubmit)="createItem(newItemLabel.value); newItemLabel.value=''">
       <!-- <label>Create a new item:</label> -->
       <input id="inputItem" type="text" placeholder=" Entrez libellé" #newItemLabel/>
     </form>
-
   </section>
+
   <!-- <p>Nb tâches : 0</p> -->
 </section>
 

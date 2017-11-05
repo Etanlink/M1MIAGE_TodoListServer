@@ -1,6 +1,7 @@
-<p>There are {{getLists().length}} lists</p>
-<section>
+<!-- <p>There are {{getLists().length}} lists</p> -->
+<section class="new_state">
   <form (ngSubmit)="createList(newListName.value); newListName.value=''">
+    <i class="fa fa-plus-square-o" aria-hidden="true"></i>
     <input type="text" placeholder=" Nouvel état" #newListName/>
   </form>
 </section>

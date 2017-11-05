@@ -1,7 +1,7 @@
 header {
   display: flex;
   flex-flow: row;
-  background: lightgreen;
+  background: #61e8ee;
   margin: 0;
   padding: 0.5em;
   border-bottom: solid black 3px;

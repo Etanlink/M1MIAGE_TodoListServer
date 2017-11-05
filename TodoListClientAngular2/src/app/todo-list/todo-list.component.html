@@ -1,4 +1,34 @@
 <section class="root" [style.backgroundColor]="getColor()">
+  <table width="100%">
+    <tr>
+      <td id="td-title-state" width="75%"><h3>{{list.name}}</h3></td>
+      <td id="td-btn-delete-state" width="25%">
+        <button (click)="delete()"> X </button>
+        <!-- <input type="color" [ngModel]="getColor()" (ngModelChange)="setColor($event)" /> -->
+      </td>
+    </tr>
+  </table>
+
+  <section class="items">
+    <app-todo-item id="item"
+                   *ngFor="let item of list.items"
+                   [clock]="item.clock"
+                   [item]="item"
+                   [listId]="list.id"
+                   [lists]="lists">
+    </app-todo-item>
+
+    <form (ngSubmit)="createItem(newItemLabel.value); newItemLabel.value=''">
+      <!-- <label>Create a new item:</label> -->
+      <input id="inputItem" type="text" placeholder="Entrez libellé" #newItemLabel/>
+    </form>
+
+  </section>
+  <p>Nb tâches : 0</p>
+</section>
+
+<!--
+<section class="root" [style.backgroundColor]="getColor()">
   <h3>
     {{list.name}}
     <button (click)="delete()">Delete list</button>
@@ -17,3 +47,4 @@
     </app-todo-item>
   </section>
 </section>
+-->

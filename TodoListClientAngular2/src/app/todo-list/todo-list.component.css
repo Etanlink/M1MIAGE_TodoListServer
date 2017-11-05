@@ -13,3 +13,23 @@
 h3 {
   margin-top: 0;
 }
+
+#td-title-state {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#td-btn-delete-state {
+  text-align: right;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+#inputItem {
+  width: 95%;
+}
+
+#items {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,19 @@
+<section class="root" [style.backgroundColor]="getColor()">
+  <h3>
+    {{list.name}}
+    <button (click)="delete()">Delete list</button>
+    <input type="color" [ngModel]="getColor()" (ngModelChange)="setColor($event)" />
+  </h3>
+  <form (ngSubmit)="createItem(newItemLabel.value); newItemLabel.value=''">
+    <label>Create a new item:</label>
+    <input type="text" #newItemLabel/>
+  </form>
+  <section class="items">
+    <app-todo-item *ngFor="let item of list.items"
+                   [clock]="item.clock"
+                   [item]="item"
+                   [listId]="list.id"
+                   [lists]="lists">
+    </app-todo-item>
+  </section>
+</section>

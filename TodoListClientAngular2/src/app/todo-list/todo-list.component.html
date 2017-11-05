@@ -1,7 +1,7 @@
 <section class="root" [style.backgroundColor]="getColor()">
   <table width="100%">
     <tr>
-      <td id="td-title-state" width="75%"><h3>{{list.name}}</h3></td>
+      <td id="td-title-state" class="title is-4" width="75%"><h3><b>{{list.name}}</b></h3></td>
       <td id="td-btn-delete-state" width="25%">
         <!-- <button (click)="delete()"> X </button> -->
         <i (click)="delete()" class="fa fa-times" aria-hidden="true"></i>
@@ -21,10 +21,11 @@
     <form (ngSubmit)="createItem(newItemLabel.value); newItemLabel.value=''">
       <!-- <label>Create a new item:</label> -->
       <input id="inputItem" type="text" placeholder=" Entrez libellé" #newItemLabel/>
+      <section class="has-text-centered">
+        <i class="fa fa-plus-square-o fa-1x" aria-hidden="true"></i>
+      </section>
     </form>
   </section>
-
-  <!-- <p>Nb tâches : 0</p> -->
 </section>
 
 <!--

@@ -46,11 +46,19 @@ export class User {
     private clients: Client[] = [];
     constructor(private passport: PassportUser) {
         users.set(passport.id, this);
+        /* Ajout de la liste de tâches par défaut */
         this.SERVER_CREATE_NEW_LIST( null,  {
             type: "SERVER_CREATE_NEW_LIST",
             name: "Tâches",
             data: {},
             clientListId: "toto"
+        });
+        /* Ajout de la liste de tâches Faites */
+        this.SERVER_CREATE_NEW_LIST( null,  {
+            type: "SERVER_CREATE_NEW_LIST",
+            name: "Faites",
+            data: {},
+            clientListId: "titi"
         });
     }
     dispose() {

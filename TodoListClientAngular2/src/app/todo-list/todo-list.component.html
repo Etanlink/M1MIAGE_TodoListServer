@@ -3,7 +3,8 @@
     <tr>
       <td id="td-title-state" width="75%"><h3>{{list.name}}</h3></td>
       <td id="td-btn-delete-state" width="25%">
-        <button (click)="delete()"> X </button>
+        <!-- <button (click)="delete()"> X </button> -->
+        <i (click)="delete()" class="fa fa-times" aria-hidden="true"></i>
         <!-- <input type="color" [ngModel]="getColor()" (ngModelChange)="setColor($event)" /> -->
       </td>
     </tr>
@@ -20,11 +21,11 @@
 
     <form (ngSubmit)="createItem(newItemLabel.value); newItemLabel.value=''">
       <!-- <label>Create a new item:</label> -->
-      <input id="inputItem" type="text" placeholder="Entrez libellé" #newItemLabel/>
+      <input id="inputItem" type="text" placeholder=" Entrez libellé" #newItemLabel/>
     </form>
 
   </section>
-  <p>Nb tâches : 0</p>
+  <!-- <p>Nb tâches : 0</p> -->
 </section>
 
 <!--

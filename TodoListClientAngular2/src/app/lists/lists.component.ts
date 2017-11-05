@@ -21,7 +21,7 @@ export class ListsComponent implements OnInit {
 
   createList(name: string) {
     const localListID = this.todoListService.SERVER_CREATE_NEW_LIST(name, {
-      color: "#FF0000",
+      color: "#ffffff",
       someOtherAttribute: "pourquoi pas un texte ?"
       // Add other data here...
     });

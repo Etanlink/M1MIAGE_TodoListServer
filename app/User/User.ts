@@ -46,6 +46,12 @@ export class User {
     private clients: Client[] = [];
     constructor(private passport: PassportUser) {
         users.set(passport.id, this);
+        this.SERVER_CREATE_NEW_LIST( null,  {
+            type: "SERVER_CREATE_NEW_LIST",
+            name: "Tâches",
+            data: {},
+            clientListId: "toto"
+        });
     }
     dispose() {
         this.clients.forEach( C => C.close() );
@@ -154,7 +160,9 @@ export class User {
         this.saveState();
         const tdl = new TodoList(msg.name, List<Item>(), getNextIdList(), 0, msg.data);
         this.todoLists = this.todoLists.push( tdl );
-        client.registerMapping(msg.clientListId, tdl.getId());
+        if (client) {
+            client.registerMapping(msg.clientListId, tdl.getId());
+        }
         this.sendStateToClients();
     }
 

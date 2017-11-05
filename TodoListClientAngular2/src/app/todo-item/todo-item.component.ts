@@ -67,10 +67,10 @@ export class TodoItemComponent implements OnInit, OnChanges {
     str = d.getFullYear()+"-"+(d.getMonth()+1)+"-"
     if(day<10)
     {
-     str = str +"0"+day+"T"+d.getHours()+":";
+     str = str +"0"+day+" "+d.getHours()+":";
     }else
     {
-      str = str + day+"T"+d.getHours()+":";
+      str = str + day+" "+d.getHours()+":";
     }
 
     if(minutes<10)
@@ -90,10 +90,10 @@ export class TodoItemComponent implements OnInit, OnChanges {
     str = d.getFullYear()+"-"+(d.getMonth()+1)+"-"
     if(day<10)
     {
-      str = str +"0"+day+"T"+d.getHours()+":";
+      str = str +"0"+day+" "+d.getHours()+":";
     }else
     {
-      str = str + day+"T"+d.getHours()+":";
+      str = str + day+" "+d.getHours()+":";
     }
 
     if(minutes<10)

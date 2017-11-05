@@ -1,35 +1,37 @@
 <section>
-  <!--<input #isChecked type="checkbox" [ngModel]="item.checked" (ngModelChange)="check(isChecked.checked)" />-->
-  <!--<button (click)="delete()">Delete</button>-->
-  <i (click)="delete()" class="fa fa-window-close" aria-hidden="true"></i>
+  <!--<div class="container">-->
+    <!--<input #isChecked type="checkbox" [ngModel]="item.checked" (ngModelChange)="check(isChecked.checked)" />-->
+    <!--<button (click)="delete()">Delete</button>-->
+    <i (click)="delete()" class="fa fa-window-close" aria-hidden="true"></i>
 
-  <label *ngIf="!isEditingLabel()" (dblclick)="editLabel(true)">
-    {{item.label}}
-  </label>
-  <form *ngIf="isEditingLabel()" (submit)="setLabel(newLabel.value)">
-    <input #newLabel type="text" [value]="item.label"/>
-  </form>
-
-  <!--<button (click)="showDetails()">Show details</button>-->
-  <i (click)="showDetails()" class="fa fa-sort-desc" aria-hidden="true"></i>
-
-  <div *ngIf="isShowingDetails()">
-    <div *ngIf="!isEditingDate()" (dblclick)="editDate(true)">{{getTheDateD()}}</div>
-    <div *ngIf="!isEditingDate()" (dblclick)="editDate(true)">{{getTheDateF()}}</div>
-    <form *ngIf="isEditingDate()" (submit)="setDate(newDateD.value,newDateF.value)">
-      <label>Date de début</label>
-      <input #newDateD type="datetime-local" value={{getTheDateD()}}/>
-      <label>Date de fin</label>
-      <input #newDateF type="datetime-local" value={{getTheDateF()}}/>
-      <button type="submit">Valider</button>
+    <label *ngIf="!isEditingLabel()" (dblclick)="editLabel(true)">
+      {{item.label}}
+    </label>
+    <form *ngIf="isEditingLabel()" (submit)="setLabel(newLabel.value)">
+      <input #newLabel type="text" [value]="item.label"/>
     </form>
-  </div>
- <form (submit)="changeList(malist.value)">
-    <select #malist>
-      <option *ngFor="let c of lists" value={{c.id}}>{{c.name}}</option>
-    </select>
 
-    <button type="submit"><i class="fa fa-exchange" aria-hidden="true"></i></button>
-  </form>
+    <!--<button (click)="showDetails()">Show details</button>-->
+    <i (click)="showDetails()" class="fa fa-caret-square-o-down" aria-hidden="true"></i>
 
+    <div *ngIf="isShowingDetails()">
+      <div *ngIf="!isEditingDate()" (dblclick)="editDate(true)">{{getTheDateD()}}</div>
+      <div *ngIf="!isEditingDate()" (dblclick)="editDate(true)">{{getTheDateF()}}</div>
+      <form *ngIf="isEditingDate()" (submit)="setDate(newDateD.value,newDateF.value)">
+        <label>Date de début</label>
+        <input #newDateD type="datetime-local" value={{getTheDateD()}}/>
+        <br/>
+        <label>Date de fin</label>
+        <input #newDateF type="datetime-local" value={{getTheDateF()}}/>
+        <button type="submit"><i class="fa fa-check-circle-o" aria-hidden="true"></i></button>
+      </form>
+    </div>
+    <form (submit)="changeList(malist.value)">
+      <select #malist>
+        <option *ngFor="let c of lists" value={{c.id}}>{{c.name}}</option>
+      </select>
+
+      <button type="submit"><i class="fa fa-exchange" aria-hidden="true"></i></button>
+    </form>
+  <!--</div>-->
 </section>

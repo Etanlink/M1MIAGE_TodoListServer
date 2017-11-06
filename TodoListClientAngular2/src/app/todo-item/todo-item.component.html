@@ -1,4 +1,4 @@
-<section>
+<section draggable>
   <table class="item" width="97%">
     <tr><td>
       <!--<input #isChecked type="checkbox" [ngModel]="item.checked" (ngModelChange)="check(isChecked.checked)" />-->
@@ -21,10 +21,10 @@
         <div *ngIf="!isEditingDate()" (dblclick)="editDate(true)" class="is-small">Fin : {{getTheDateF()}}</div>
         <form *ngIf="isEditingDate()" (submit)="setDate(newDateD.value,newDateF.value)">
           <label>Date de début</label>
-          <input #newDateD type="datetime-local" value={{getTheDateD()}}/>
+          <input #newDateD type="datetime-local" value={{getTheDateDString()}}/>
           <br/>
           <label>Date de fin</label>
-          <input #newDateF type="datetime-local" value={{getTheDateF()}}/>
+          <input #newDateF type="datetime-local" value={{getTheDateFString()}}/>
           <button type="submit"><i class="fa fa-check-circle-o" aria-hidden="true"></i></button>
         </form>
       </div>

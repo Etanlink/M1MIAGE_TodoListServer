@@ -58,6 +58,54 @@ export class TodoItemComponent implements OnInit, OnChanges {
     this.editDate(false);
   }
 
+  getTheDateDString() {
+
+    let d = new Date(this.item.data.dateD);
+    let day=d.getDate();
+    let minutes=d.getMinutes();
+    let str="";
+    str = d.getFullYear()+"-"+(d.getMonth()+1)+"-"
+    if(day<10)
+    {
+      str = str +"0"+day+"T"+d.getHours()+":";
+    }else
+    {
+      str = str + day+"T"+d.getHours()+":";
+    }
+
+    if(minutes<10)
+    {
+      str=str+"0"+minutes;
+    }else
+    {
+      str=str+minutes;
+    }
+    return str;
+  }
+  getTheDateFString() {
+    let d = new Date(this.item.data.dateF);
+    let day=d.getDate();
+    let minutes=d.getMinutes();
+    let str="";
+    str = d.getFullYear()+"-"+(d.getMonth()+1)+"-"
+    if(day<10)
+    {
+      str = str +"0"+day+"T"+d.getHours()+":";
+    }else
+    {
+      str = str + day+"T"+d.getHours()+":";
+    }
+
+    if(minutes<10)
+    {
+      str=str+"0"+minutes;
+    }else
+    {
+      str=str+minutes;
+    }
+    return str;
+  }
+
   getTheDateD() {
 
     let d = new Date(this.item.data.dateD);

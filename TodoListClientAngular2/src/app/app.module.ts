@@ -12,6 +12,9 @@ import {HttpModule} from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { ListsComponent } from './lists/lists.component';
 
+/* Add the drag and drop */
+import { NgDragDropModule } from 'ng-drag-drop';
+
 const appRoutes: Routes = [
   {
     path: 'lists',
@@ -30,7 +33,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule, HttpModule, FormsModule,
-    RouterModule.forRoot(appRoutes, {useHash: true} )
+    RouterModule.forRoot(appRoutes, {useHash: true} ),
+    NgDragDropModule.forRoot()
   ],
   providers: [TodoListService],
   bootstrap: [AppComponent]

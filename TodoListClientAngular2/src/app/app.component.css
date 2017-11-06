@@ -37,3 +37,20 @@ section.connection > label:hover {
 }
 */
 
+html {
+  min-height: 100%;
+  position: absolute;
+  min-width: 100%;
+}
+body {
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+app-todo-list:nth-child(1) #td-btn-delete-state {
+  display: none!important;
+}
+app-todo-list:nth-child(2) #td-btn-delete-state {
+  display: none!important;
+}

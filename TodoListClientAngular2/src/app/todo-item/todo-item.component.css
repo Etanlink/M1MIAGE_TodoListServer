@@ -8,8 +8,16 @@ form {
 
 table.item {
   border: 1px solid darkslategrey;
+  margin-bottom: 1em;
 }
 
 td {
-  padding: 3px;
+  padding: 10px;
+  color: white;
+}
+.subtitle {
+  color: white;
+}
+.tdHidden {
+  padding: 0 10px 0 10px;
 }

@@ -16,11 +16,17 @@ export class TodoItemComponent implements OnInit, OnChanges {
   private editingLabel = false;
   private editingDate = false;
   private showingDetails = false;
+  public bgColor = "hsl(348, 100%, 61%)";
 
-
-  constructor(private todoListService: TodoListService) { }
+  constructor(private todoListService: TodoListService) {}
 
   ngOnInit() {
+    if (this.item.checked) {
+      this.bgColor = "hsl(141, 71%, 48%)";
+    }
+    else {
+      this.bgColor = "hsl(348, 100%, 61%)";
+    }
   }
   ngOnChanges(changes: SimpleChanges) {
   }
@@ -157,6 +163,12 @@ export class TodoItemComponent implements OnInit, OnChanges {
 
   check(checked: boolean) {
     this.todoListService.SERVER_UPDATE_ITEM_CHECK(this.listId, this.item.id, checked);
+    if (checked) {
+      this.bgColor = "hsl(141, 71%, 48%)";
+    }
+    else {
+      this.bgColor = "hsl(348, 100%, 61%)";
+    }
   }
 
   delete() {

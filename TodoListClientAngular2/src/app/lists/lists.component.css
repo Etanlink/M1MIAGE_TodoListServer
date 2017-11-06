@@ -11,6 +11,11 @@ app-todo-list {
   margin: 1em;
 }
 
+
 section.new_state {
   margin: 15px;
+}
+
+form > input {
+  height: 30px;
 }

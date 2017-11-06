@@ -20,6 +20,8 @@ $ npm run prod
 
 ## TodoList
 La TodoList présente les fonctionnalités suivantes :
-  - Ajouter, supprimer, modifier (double clic) un état
-  - Ajouter, modifier (double clic), supprimer une tâche
-  - Changer l'état d'une tâche (via drag & drop !)
+  - Ajouter, modifier (double clic), supprimer un état
+  - Ajouter, modifier (double clic), supprimer un item
+  - Changer un item d'état (via drag & drop !)
+  - Changer les dates de début et de fin des items (double clic)
+  - Changer le statut d'un item : en cours (rouge) / fait (vert)

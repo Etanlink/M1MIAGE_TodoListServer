@@ -1,6 +1,8 @@
+/*
 section.toBeUpdated {
   background-color: orangered;
 }
+*/
 
 form {
   display: inline;
@@ -15,9 +17,11 @@ td {
   padding: 10px;
   color: white;
 }
+
 .subtitle {
   color: white;
 }
+
 .tdHidden {
   padding: 0 10px 0 10px;
 }

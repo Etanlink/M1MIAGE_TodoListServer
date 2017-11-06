@@ -3,6 +3,7 @@
 <p>getItemsUI: {{getItemsUI() | json}}</p>
 <p>getLists: {{getLists() | json}}</p>
 -->
+
 <section class="container lists">
   <app-todo-list *ngFor="let list of getLists()" [list]="list" [clock]="list.clock" [lists]="getLists()"></app-todo-list>
   <section class="new_state">

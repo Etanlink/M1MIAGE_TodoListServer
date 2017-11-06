@@ -15,8 +15,12 @@
         <section class="user">
           <label>Identifié via {{getUserProvider()}}</label>
           <section class="connection">
-            <label *ngIf="getConnected() | async"><span class="has-text-success"><i class="fa fa-check-square"></i></span> connecté</label>
-            <label *ngIf="!(getConnected() | async)" (click)="tryReconnectSocket()"><span class="has-text-danger"><i class="fa fa-ban"></i></span> déconnecté</label>
+            <label *ngIf="getConnected() | async">
+              <span class="has-text-success"><i class="fa fa-check-square"></i>
+              </span> connecté</label>
+            <label *ngIf="!(getConnected() | async)" (click)="tryReconnectSocket()">
+              <span class="has-text-danger"><i class="fa fa-ban"></i>
+              </span> déconnecté</label>
           </section>
           <section>
             <label><i class="fa fa-user-circle" aria-hidden="true"><br></i> {{getUserName()}}</label>

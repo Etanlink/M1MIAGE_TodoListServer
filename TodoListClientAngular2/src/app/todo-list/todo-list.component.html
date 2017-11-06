@@ -3,9 +3,10 @@
     <tr>
       <td id="td-title-state" class="title is-4" width="75%"><h3><b>{{list.name}}</b></h3></td>
       <td id="td-btn-delete-state" width="25%">
-        <!-- <button (click)="delete()"> X </button> -->
+        <!-- icone permettant de supprimer un état -->
         <i *ngIf="this.list.name!=='Tâches' && this.list.name!=='Faites'" (click)="delete()" class="fa fa-times" aria-hidden="true"></i> <!-- to do better -->
-        <!-- <input type="color" [ngModel]="getColor()" (ngModelChange)="setColor($event)" /> -->
+        <!-- changement de couleur de la todolist (pas concerné)
+        <input type="color" [ngModel]="getColor()" (ngModelChange)="setColor($event)" /> -->
       </td>
     </tr>
   </table>
@@ -18,8 +19,8 @@
                    [listId]="list.id"
                    [lists]="lists">
     </app-todo-item>
+
     <form (ngSubmit)="createItem(newItemLabel.value); newItemLabel.value=''">
-      <!-- <label>Create a new item:</label> -->
       <input id="inputItem" type="text" placeholder=" Nouvelle tâche" #newItemLabel/>
       <section class="has-text-centered">
         <i class="fa fa-plus-square-o fa-1x" aria-hidden="true"></i>
@@ -27,25 +28,3 @@
     </form>
   </section>
 </section>
-
-<!--
-<section class="root" [style.backgroundColor]="getColor()">
-  <h3>
-    {{list.name}}
-    <button (click)="delete()">Delete list</button>
-    <input type="color" [ngModel]="getColor()" (ngModelChange)="setColor($event)" />
-  </h3>
-  <form (ngSubmit)="createItem(newItemLabel.value); newItemLabel.value=''">
-    <label>Create a new item:</label>
-    <input type="text" #newItemLabel/>
-  </form>
-  <section class="items">
-    <app-todo-item *ngFor="let item of list.items"
-                   [clock]="item.clock"
-                   [item]="item"
-                   [listId]="list.id"
-                   [lists]="lists">
-    </app-todo-item>
-  </section>
-</section>
--->

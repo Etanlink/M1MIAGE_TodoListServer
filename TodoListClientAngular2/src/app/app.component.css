@@ -1,52 +1,21 @@
-/*
-header {
-  display: flex;
-  flex-flow: row;
-  background: #61e8ee;
-  margin: 0;
-  padding: 0.5em;
-  border-bottom: solid black 3px;
-}
-
-header > h1 {
-  flex: 1 1 auto;
-}
-
-header > section.user {
-  flex: 0 1 auto;
-  display: flex;
-  flex-flow: column;
-}
-*/
-
 header img.photo {
   width: 6em;
   height: 6em;
   margin-left: 1em;
 }
 
-/*
-section.connection {
-  padding: 0;
-  margin: 0;
-  flex: 1 1;
-}
-
-section.connection > label:hover {
-  background: yellow;
-}
-*/
-
 html {
   min-height: 100%;
   position: absolute;
   min-width: 100%;
 }
+
 body {
   min-width: 100%;
   min-height: 100%;
   position: relative;
 }
+
 
 app-todo-list:nth-child(1) #td-btn-delete-state {
   display: none!important;
@@ -54,3 +23,4 @@ app-todo-list:nth-child(1) #td-btn-delete-state {
 app-todo-list:nth-child(2) #td-btn-delete-state {
   display: none!important;
 }
+

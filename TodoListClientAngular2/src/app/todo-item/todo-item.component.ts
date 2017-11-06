@@ -23,8 +23,7 @@ export class TodoItemComponent implements OnInit, OnChanges {
   ngOnInit() {
     if (this.item.checked) {
       this.bgColor = "hsl(141, 71%, 48%)";
-    }
-    else {
+    } else {
       this.bgColor = "hsl(348, 100%, 61%)";
     }
   }
@@ -61,102 +60,87 @@ export class TodoItemComponent implements OnInit, OnChanges {
   }
 
   setDate(dateD: number, dateF: number) {
-    this.todoListService.SERVER_UPDATE_ITEM_DATA(this.listId, this.item.id, {categories: this.item.data.categories, dateD: dateD, dateF: dateF});
+    this.todoListService.SERVER_UPDATE_ITEM_DATA(this.listId, this.item.id,
+      {categories: this.item.data.categories, dateD: dateD, dateF: dateF});
     this.editDate(false);
   }
 
   getTheDateDString() {
-
     let d = new Date(this.item.data.dateD);
     let day=d.getDate();
     let minutes=d.getMinutes();
     let str="";
-    str = d.getFullYear()+"-"+(d.getMonth()+1)+"-"
-    if(day<10)
-    {
-      str = str +"0"+day+"T"+d.getHours()+":";
-    }else
-    {
-      str = str + day+"T"+d.getHours()+":";
+    str = d.getFullYear() + "-" + (d.getMonth() + 1) + "-"
+    if (day < 10) {
+      str = str + "0" + day + "T" + d.getHours() + ":";
+    } else {
+      str = str + day + "T" + d.getHours() + ":";
     }
 
-    if(minutes<10)
-    {
-      str=str+"0"+minutes;
-    }else
-    {
-      str=str+minutes;
+    if (minutes < 10) {
+      str = str + "0" + minutes;
+    } else {
+      str = str + minutes;
     }
     return str;
   }
+
   getTheDateFString() {
     let d = new Date(this.item.data.dateF);
-    let day=d.getDate();
-    let minutes=d.getMinutes();
-    let str="";
-    str = d.getFullYear()+"-"+(d.getMonth()+1)+"-"
-    if(day<10)
-    {
-      str = str +"0"+day+"T"+d.getHours()+":";
-    }else
-    {
-      str = str + day+"T"+d.getHours()+":";
+    let day = d.getDate();
+    let minutes = d.getMinutes();
+    let str = "";
+    str = d.getFullYear() + "-" + (d.getMonth() + 1) + "-"
+    if (day < 10) {
+      str = str + "0" + day + "T" + d.getHours() + ":";
+    } else {
+      str = str + day + "T" + d.getHours() + ":";
     }
 
-    if(minutes<10)
-    {
-      str=str+"0"+minutes;
-    }else
-    {
-      str=str+minutes;
+    if (minutes < 10) {
+      str = str + "0" + minutes;
+    } else {
+      str = str + minutes;
     }
     return str;
   }
 
   getTheDateD() {
-
     let d = new Date(this.item.data.dateD);
-    let day=d.getDate();
-    let minutes=d.getMinutes();
-    let str="";
-    str = d.getFullYear()+"-"+(d.getMonth()+1)+"-"
-    if(day<10)
-    {
-     str = str +"0"+day+" "+d.getHours()+":";
-    }else
-    {
-      str = str + day+" "+d.getHours()+":";
+    let day = d.getDate();
+    let minutes = d.getMinutes();
+    let str = "";
+    str = d.getFullYear() + "-" + (d.getMonth() + 1) + "-"
+    if (day < 10) {
+     str = str + "0" + day + " " + d.getHours() + ":";
+    } else {
+      str = str + day + " " + d.getHours() + ":";
     }
 
-    if(minutes<10)
-    {
-      str=str+"0"+minutes;
-    }else
-    {
-      str=str+minutes;
+    if (minutes < 10) {
+      str = str + "0" + minutes;
+    } else {
+      str = str + minutes;
     }
     return str;
   }
+
   getTheDateF() {
     let d = new Date(this.item.data.dateF);
-    let day=d.getDate();
-    let minutes=d.getMinutes();
-    let str="";
-    str = d.getFullYear()+"-"+(d.getMonth()+1)+"-"
-    if(day<10)
-    {
-      str = str +"0"+day+" "+d.getHours()+":";
-    }else
-    {
-      str = str + day+" "+d.getHours()+":";
+    let day = d.getDate();
+    let minutes = d.getMinutes();
+    let str = "";
+    str = d.getFullYear() + "-" + (d.getMonth() + 1) + "-"
+    if (day < 10) {
+      str = str + "0" + day + " " + d.getHours() + ":";
+    } else {
+      str = str + day + " " + d.getHours() + ":";
     }
 
-    if(minutes<10)
-    {
-      str=str+"0"+minutes;
-    }else
-    {
-      str=str+minutes;
+    if (minutes < 10) {
+      str = str + "0" + minutes;
+    } else {
+      str = str + minutes;
     }
     return str;
   }
@@ -165,8 +149,7 @@ export class TodoItemComponent implements OnInit, OnChanges {
     this.todoListService.SERVER_UPDATE_ITEM_CHECK(this.listId, this.item.id, checked);
     if (checked) {
       this.bgColor = "hsl(141, 71%, 48%)";
-    }
-    else {
+    } else {
       this.bgColor = "hsl(348, 100%, 61%)";
     }
   }
@@ -180,8 +163,7 @@ export class TodoItemComponent implements OnInit, OnChanges {
     console.log("details" + this.showingDetails);
   }
 
-  changeList(listDest: ListID)
-  {
+  changeList(listDest: ListID) {
     this.todoListService.SERVER_CHANGE_ITEMLIST(this.listId,this.item.id, listDest);
     this.todoListService.SERVER_DELETE_ITEM(this.listId, this.item.id);
   }

@@ -68,3 +68,8 @@ export type TodoListWithItems = {
   clock: number,
   data: Object // Possible extensions
 };
+
+export type DragItem = {
+  item: ItemJSON,
+  listId: ListID
+};

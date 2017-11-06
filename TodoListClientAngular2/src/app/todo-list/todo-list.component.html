@@ -1,4 +1,4 @@
-<section class="root" [style.backgroundColor]="getColor()">
+<section class="root card" [style.backgroundColor]="getColor()">
   <table width="100%">
     <tr>
       <td id="td-title-state" class="title is-4" width="75%"><h3><b>{{list.name}}</b></h3></td>
@@ -10,7 +10,7 @@
     </tr>
   </table>
   <br/>
-  <section droppable class="items">
+  <section droppable (onDrop)="changeList($event)" class="items">
     <app-todo-item id="item"
                    *ngFor="let item of list.items"
                    [clock]="item.clock"

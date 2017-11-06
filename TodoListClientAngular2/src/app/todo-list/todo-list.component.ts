@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {TodoListWithItems, TodoListService} from "../todo-list.service";
+import {DragItem, ItemJSON} from "../../data/protocol";
 
 @Component({
   selector: 'app-todo-list',
@@ -35,5 +36,11 @@ export class TodoListComponent implements OnInit {
       this.list.id,
       Object.assign({}, this.list.data, {color})
     );
+  }
+
+  /* Add drag&drop*/
+  changeList(dragEvent) {
+    const dragItem: DragItem = dragEvent.dragData;
+    this.todoListService.SERVER_CHANGE_ITEMLIST(dragItem.listId, dragItem.item.id, this.list.id);
   }
 }
